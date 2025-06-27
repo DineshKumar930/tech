@@ -28,12 +28,14 @@
             background-color: #f9f9f9;
             color: #333;
             line-height: 1.6;
+            overflow-x: hidden;
         }
         
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 0 20px;
+            width: 100%;
         }
         
         header {
@@ -94,6 +96,7 @@
             justify-content: center;
             gap: 1rem;
             margin-top: 1rem;
+            flex-wrap: wrap;
         }
         
         .social-links a {
@@ -133,8 +136,12 @@
         .logo {
             font-weight: 700;
             color: var(--primary);
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             text-decoration: none;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 150px;
         }
         
         .nav-links {
@@ -143,7 +150,7 @@
         }
         
         .nav-links li {
-            margin-left: 2rem;
+            margin-left: 1.5rem;
         }
         
         .nav-links a {
@@ -153,6 +160,7 @@
             transition: color 0.3s ease;
             position: relative;
             padding: 0.5rem 0;
+            font-size: 0.9rem;
         }
         
         .nav-links a::after {
@@ -181,17 +189,17 @@
         }
         
         section {
-            padding: 4rem 0;
+            padding: 3rem 0;
         }
         
         .section-title {
             text-align: center;
-            margin-bottom: 3rem;
+            margin-bottom: 2rem;
             position: relative;
         }
         
         .section-title h2 {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--secondary);
             display: inline-block;
             padding-bottom: 0.5rem;
@@ -203,7 +211,7 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 80px;
+            width: 60px;
             height: 3px;
             background: linear-gradient(to right, var(--primary), var(--accent));
         }
@@ -211,15 +219,17 @@
         .about-content {
             display: flex;
             align-items: center;
-            gap: 3rem;
+            gap: 2rem;
+            flex-direction: column;
         }
         
         .about-text {
             flex: 1;
+            width: 100%;
         }
         
         .about-text h3 {
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             margin-bottom: 1rem;
             color: var(--secondary);
         }
@@ -227,11 +237,13 @@
         .about-text p {
             margin-bottom: 1rem;
             color: #555;
+            font-size: 0.95rem;
         }
         
         .about-image {
             flex: 1;
             text-align: center;
+            width: 100%;
         }
         
         .about-image img {
@@ -242,7 +254,7 @@
         
         .btn {
             display: inline-block;
-            padding: 0.8rem 1.5rem;
+            padding: 0.7rem 1.3rem;
             background: var(--primary);
             color: white;
             border-radius: 30px;
@@ -252,6 +264,7 @@
             border: none;
             cursor: pointer;
             margin-top: 1rem;
+            font-size: 0.9rem;
         }
         
         .btn:hover {
@@ -273,14 +286,14 @@
         
         .skills-container {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
         
         .skill-category {
             background: white;
             border-radius: 10px;
-            padding: 2rem;
+            padding: 1.5rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease, box-shadow 0.3s ease;
         }
@@ -292,8 +305,8 @@
         
         .skill-category h3 {
             color: var(--secondary);
-            margin-bottom: 1.5rem;
-            font-size: 1.3rem;
+            margin-bottom: 1.2rem;
+            font-size: 1.2rem;
             display: flex;
             align-items: center;
         }
@@ -311,6 +324,7 @@
             display: flex;
             justify-content: space-between;
             margin-bottom: 0.5rem;
+            font-size: 0.9rem;
         }
         
         .skill-bar {
@@ -336,8 +350,7 @@
             content: '';
             position: absolute;
             top: 0;
-            left: 50%;
-            transform: translateX(-50%);
+            left: 31px;
             width: 2px;
             height: 100%;
             background: var(--primary);
@@ -345,22 +358,16 @@
         
         .timeline-item {
             position: relative;
-            margin-bottom: 3rem;
-        }
-        
-        .timeline-item:nth-child(odd) {
-            padding-right: calc(50% + 2rem);
-            text-align: right;
-        }
-        
-        .timeline-item:nth-child(even) {
-            padding-left: calc(50% + 2rem);
+            margin-bottom: 2rem;
+            padding-left: 70px;
+            padding-right: 0;
+            text-align: left;
         }
         
         .timeline-dot {
             position: absolute;
             top: 0;
-            left: 50%;
+            left: 31px;
             transform: translateX(-50%);
             width: 20px;
             height: 20px;
@@ -371,7 +378,7 @@
         
         .timeline-content {
             background: white;
-            padding: 1.5rem;
+            padding: 1.2rem;
             border-radius: 8px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
@@ -380,23 +387,25 @@
             color: var(--accent);
             font-weight: 500;
             margin-bottom: 0.5rem;
+            font-size: 0.9rem;
         }
         
         .timeline-title {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             margin-bottom: 0.5rem;
             color: var(--secondary);
         }
         
         .timeline-text {
             color: #555;
+            font-size: 0.9rem;
         }
         
         .qualification-item {
             background: white;
             border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 1.5rem;
+            padding: 1.5rem;
+            margin-bottom: 1.2rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
             transition: transform 0.3s ease;
         }
@@ -408,30 +417,37 @@
         
         .qualification-header {
             display: flex;
-            justify-content: space-between;
+            flex-direction: column;
             margin-bottom: 1rem;
         }
         
         .qualification-title {
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             color: var(--secondary);
+            margin-bottom: 0.5rem;
         }
         
         .qualification-date {
             color: var(--accent);
             font-weight: 500;
+            font-size: 0.9rem;
         }
         
         .qualification-institution {
             color: var(--primary);
             margin-bottom: 0.5rem;
             font-weight: 500;
+            font-size: 0.9rem;
+        }
+        
+        .qualification-text {
+            font-size: 0.9rem;
         }
         
         .portfolio-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
         }
         
         .portfolio-item {
@@ -448,7 +464,7 @@
         
         .portfolio-img {
             width: 100%;
-            height: 250px;
+            height: 200px;
             object-fit: cover;
             display: block;
         }
@@ -476,25 +492,31 @@
         
         .portfolio-title {
             color: white;
-            font-size: 1.3rem;
+            font-size: 1.1rem;
             margin-bottom: 0.5rem;
         }
         
         .portfolio-category {
             color: var(--primary);
             margin-bottom: 1rem;
+            font-size: 0.9rem;
+        }
+        
+        .portfolio-overlay p {
+            color: #ddd;
+            font-size: 0.85rem;
         }
         
         .contact-info {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-bottom: 3rem;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 1.5rem;
+            margin-bottom: 2rem;
         }
         
         .contact-card {
             background: white;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 10px;
             text-align: center;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
@@ -507,28 +529,38 @@
         }
         
         .contact-icon {
-            font-size: 2rem;
+            font-size: 1.8rem;
             color: var(--primary);
             margin-bottom: 1rem;
         }
         
+        .contact-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
+        .contact-card p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+        
         .contact-form {
             background: white;
-            padding: 2rem;
+            padding: 1.5rem;
             border-radius: 10px;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
         }
         
         .form-group {
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
         
         .form-control {
             width: 100%;
-            padding: 0.8rem 1rem;
+            padding: 0.7rem 1rem;
             border: 1px solid #ddd;
             border-radius: 5px;
-            font-size: 1rem;
+            font-size: 0.9rem;
             transition: border-color 0.3s ease;
         }
         
@@ -538,7 +570,7 @@
         }
         
         textarea.form-control {
-            min-height: 150px;
+            min-height: 120px;
             resize: vertical;
         }
         
@@ -560,16 +592,19 @@
             display: flex;
             list-style: none;
             margin: 1rem 0;
+            flex-wrap: wrap;
+            justify-content: center;
         }
         
         .footer-links li {
-            margin: 0 1rem;
+            margin: 0.5rem 1rem;
         }
         
         .footer-links a {
             color: white;
             text-decoration: none;
             transition: color 0.3s ease;
+            font-size: 0.9rem;
         }
         
         .footer-links a:hover {
@@ -578,10 +613,19 @@
         
         .copyright {
             opacity: 0.8;
-            font-size: 0.9rem;
+            font-size: 0.8rem;
         }
         
+        /* Mobile-specific styles */
         @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .tagline {
+                font-size: 1rem;
+            }
+            
             .nav-links {
                 position: fixed;
                 top: 70px;
@@ -608,23 +652,50 @@
                 display: block;
             }
             
-            .about-content {
+            .section-title h2 {
+                font-size: 1.5rem;
+            }
+            
+            .qualification-header {
                 flex-direction: column;
             }
             
-            .timeline::before {
-                left: 31px;
+            .qualification-date {
+                margin-top: 0.3rem;
             }
             
-            .timeline-item:nth-child(odd),
-            .timeline-item:nth-child(even) {
-                padding-left: 70px;
-                padding-right: 0;
-                text-align: left;
+            .portfolio-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .profile-img {
+                width: 120px;
+                height: 120px;
             }
             
-            .timeline-dot {
-                left: 31px;
+            h1 {
+                font-size: 1.8rem;
+            }
+            
+            .section {
+                padding: 2rem 0;
+            }
+            
+            .skills-container {
+                grid-template-columns: 1fr;
+            }
+            
+            .contact-info {
+                grid-template-columns: 1fr;
+            }
+            
+            .btn, .btn-outline {
+                display: block;
+                width: 100%;
+                text-align: center;
+                margin-top: 0.8rem;
             }
         }
         
@@ -658,21 +729,21 @@
     <header>
         <div class="container header-content">
             <img src="pro.jpg" alt="Profile Image" class="profile-img">
-            <h1>&nbsp; Dinesh Kumar Roy</h1>
+            <h1>Dinesh Kumar Roy</h1>
             <p class="tagline">Computer Science Lecturer | Educator | Researcher</p>
             <div class="social-links">
-                <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                <a href="#"><i class="fab fa-github"></i></a>
+                <a href="http://www.linkedin.com/in/dinesh-kumar-503036251"><i class="fab fa-linkedin-in"></i></a>
+                <a href="https://github.com/DineshKumar930" target="_blank"><i class="fab fa-github"></i></a>
                 <a href="#"><i class="fab fa-twitter"></i></a>
                 <a href="#"><i class="fab fa-researchgate"></i></a>
-                <a href="#"><i class="fas fa-envelope"></i></a>
+                <a href="mailto:221303dk@gmail.com"><i class="fas fa-envelope"></i></a>
             </div>
         </div>
     </header>
     
     <nav>
         <div class="container nav-container">
-            <a href="#" class="logo">&nbsp;Dinesh Kumar Roy</a>
+            <a href="#" class="logo">Dinesh Kumar Roy</a>
             <ul class="nav-links">
                 <li><a href="#about">About</a></li>
                 <li><a href="#qualifications">Qualifications</a></li>
@@ -702,7 +773,7 @@
                     <a href="#" class="btn btn-outline">Download CV</a>
                 </div>
                 <div class="about-image slide-up">
-                    <img src=" cls.jpg" alt="Teaching in Classroom">
+                    <img src="cls.jpg" alt="Teaching in Classroom">
                 </div>
             </div>
         </div>
@@ -720,34 +791,25 @@
                         <span class="qualification-date">2021 - 2024</span>
                     </div>
                     <p class="qualification-institution">A.K.T.U Lucknow, India</p>
-                    <p class="qualification-text">Specialized in Computer Science and Engineering. Dissertation focused on [Your Research Topic]. Published [X] papers in peer-reviewed journals and conferences during doctoral studies.</p>
+                    <p class="qualification-text">Specialized in Computer Science and Engineering. Dissertation focused on [Your Research Topic].</p>
                 </div>
                 
                 <div class="qualification-item slide-up">
                     <div class="qualification-header">
-                        <h3 class="qualification-title">M.Sc. in Computer Science</h3>
-                        <span class="qualification-date">2018 - 2020</span>
+                        <h3 class="qualification-title">Diploma in Computer Science</h3>
+                        <span class="qualification-date">2018 - 2021</span>
                     </div>
-                    <p class="qualification-institution">[University Name], [Country]</p>
-                    <p class="qualification-text">Graduated with distinction. Thesis on [Thesis Topic]. Developed expertise in [Relevant Areas].</p>
-                </div>
-                
-                <div class="qualification-item slide-up">
-                    <div class="qualification-header">
-                        <h3 class="qualification-title">B.Sc. in Computer Science</h3>
-                        <span class="qualification-date">2014 - 2018</span>
-                    </div>
-                    <p class="qualification-institution">[University Name], [Country]</p>
-                    <p class="qualification-text">Graduated with honors. Focused on [Major Areas]. Completed projects in [Project Topics].</p>
+                    <p class="qualification-institution">BTEUP, Lucknow, India</p>
+                    <p class="qualification-text">Graduated with distinction. Focused on practical applications of computer science.</p>
                 </div>
                 
                 <div class="qualification-item slide-up">
                     <div class="qualification-header">
                         <h3 class="qualification-title">Teaching Certification</h3>
-                        <span class="qualification-date">2019</span>
+                        <span class="qualification-date">2022</span>
                     </div>
-                    <p class="qualification-institution">[Certification Body]</p>
-                    <p class="qualification-text">Certified in [Specific Teaching Methods]. Specialized training in pedagogical techniques for STEM education.</p>
+                    <p class="qualification-institution">UGC NET Qualified</p>
+                    <p class="qualification-text">Certified to teach at university level in India.</p>
                 </div>
             </div>
         </div>
@@ -762,9 +824,9 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content slide-up">
-                        <div class="timeline-date">2022 - Present</div>
+                        <div class="timeline-date">2023 - Present</div>
                         <h3 class="timeline-title">Computer Science Lecturer</h3>
-                        <p class="timeline-institution">[University/College Name]</p>
+                        <p class="timeline-institution">Government Polytechnic, Varanasi</p>
                         <p class="timeline-text">
                             - Teach undergraduate courses in Data Structures, Algorithms, and Programming Fundamentals<br>
                             - Develop and update curriculum to reflect current industry trends<br>
@@ -777,9 +839,9 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content slide-up">
-                        <div class="timeline-date">2021 - 2022</div>
+                        <div class="timeline-date">2022 - 2023</div>
                         <h3 class="timeline-title">IT Trainer</h3>
-                        <p class="timeline-institution">[Training Institute/Company Name]</p>
+                        <p class="timeline-institution">Tech Solutions Institute</p>
                         <p class="timeline-text">
                             - Conducted professional training in programming languages (Python, Java, C++)<br>
                             - Designed and delivered workshops on web development and database systems<br>
@@ -792,28 +854,13 @@
                 <div class="timeline-item">
                     <div class="timeline-dot"></div>
                     <div class="timeline-content slide-up">
-                        <div class="timeline-date">2018 - 2021</div>
-                        <h3 class="timeline-title">Research Assistant</h3>
-                        <p class="timeline-institution">[University/Research Center Name]</p>
+                        <div class="timeline-date">Summer 2021</div>
+                        <h3 class="timeline-title">Full Stack Java Intern</h3>
+                        <p class="timeline-institution">Naresh i Technologies</p>
                         <p class="timeline-text">
-                            - Assisted in research projects related to [Research Area]<br>
-                            - Published [X] papers in peer-reviewed conferences/journals<br>
-                            - Developed algorithms and software for research purposes<br>
-                            - Presented findings at [Conference Names]
-                        </p>
-                    </div>
-                </div>
-                
-                <div class="timeline-item">
-                    <div class="timeline-dot"></div>
-                    <div class="timeline-content slide-up">
-                        <div class="timeline-date">Summer 2017</div>
-                        <h3 class="timeline-title">Full Satck Java Intern</h3>
-                        <p class="timeline-institution">Naresh i Technlogie</p>
-                        <p class="timeline-text">
-                            - Developed and tested software modules for [Project Name]<br>
+                            - Developed and tested software modules for enterprise applications<br>
                             - Collaborated with team members using Agile methodologies<br>
-                            - Gained practical experience in software development lifecycle
+                            - Gained practical experience in full software development lifecycle
                         </p>
                     </div>
                 </div>
@@ -948,7 +995,7 @@
             </div>
             <div class="portfolio-grid">
                 <div class="portfolio-item slide-up">
-                    <img src=" lab.jpg" alt="Course Development" class="portfolio-img">
+                    <img src="lab.jpg" alt="Course Development" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <h3 class="portfolio-title">Data Structures Course</h3>
                         <p class="portfolio-category">Curriculum Development</p>
@@ -957,7 +1004,7 @@
                 </div>
                 
                 <div class="portfolio-item slide-up">
-                    <img src=" all.jpg" alt="Research Paper" class="portfolio-img">
+                    <img src="all.jpg" alt="Research Paper" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <h3 class="portfolio-title">Teaching Methods in CS</h3>
                         <p class="portfolio-category">Educational Research</p>
@@ -966,7 +1013,7 @@
                 </div>
                 
                 <div class="portfolio-item slide-up">
-                    <img src=" lab.jpg" alt="Workshop" class="portfolio-img">
+                    <img src="lab.jpg" alt="Workshop" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <h3 class="portfolio-title">Programming Workshop</h3>
                         <p class="portfolio-category">Professional Training</p>
@@ -975,7 +1022,7 @@
                 </div>
                 
                 <div class="portfolio-item slide-up">
-                    <img src=" cls.jpg" alt="Online Course" class="portfolio-img">
+                    <img src="cls.jpg" alt="Online Course" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <h3 class="portfolio-title">Online Learning Modules</h3>
                         <p class="portfolio-category">E-Learning</p>
@@ -984,7 +1031,7 @@
                 </div>
                 
                 <div class="portfolio-item slide-up">
-                    <img src=" lab.jpg" alt="Open Source" class="portfolio-img">
+                    <img src="lab.jpg" alt="Open Source" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <h3 class="portfolio-title">Educational Tools</h3>
                         <p class="portfolio-category">Open Source</p>
@@ -993,7 +1040,7 @@
                 </div>
                 
                 <div class="portfolio-item slide-up">
-                    <img src=" lab2.jpg" alt="Conference" class="portfolio-img">
+                    <img src="lab2.jpg" alt="Conference" class="portfolio-img">
                     <div class="portfolio-overlay">
                         <h3 class="portfolio-title">Conference Presentation</h3>
                         <p class="portfolio-category">Professional Development</p>
@@ -1023,7 +1070,7 @@
                         <i class="fas fa-phone"></i>
                     </div>
                     <h3>Phone</h3>
-                    <p>+91 9335082043 (Mobile)</p>
+                    <p>+91 9335082043</p>
                 </div>
                 
                 <div class="contact-card slide-up">
@@ -1032,7 +1079,7 @@
                     </div>
                     <h3>Location</h3>
                     <p>Department of Computer Science</p>
-                    <p>GPA, Varanasi, India</p>
+                    <p>Government Polytechnic, Varanasi, India</p>
                 </div>
             </div>
             
